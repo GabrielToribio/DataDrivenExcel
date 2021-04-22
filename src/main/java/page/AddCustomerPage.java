@@ -1,7 +1,9 @@
 package page;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -25,6 +27,8 @@ public class AddCustomerPage extends BasePage{
 	@FindBy(how = How.XPATH, using = "//input[@name='mobile']") WebElement MOBILE_NUMBER_FIELD;
 	@FindBy(how = How.XPATH, using = "//input[@name='address1']") WebElement ADDRESS1_FIELD;
 	@FindBy(how = How.XPATH, using = "//input[@name='address2']") WebElement ADDRESS2_FIELD;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"s2id_autogen1\"]/a") WebElement COUNTRY_DROP_DOWN;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"select2-drop\"]/div/input") WebElement COUNTRY_FIELD;
 	@FindBy(how = How.XPATH, using = "//input[@name='newssub']") WebElement NEWS_SUB_CHECKBOX;
 	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-primary btn-block btn-lg']") WebElement SUBMIT_BUTTON;
 	
@@ -38,6 +42,7 @@ public class AddCustomerPage extends BasePage{
 	}
 	
 	public void enterFullName(String firstName, String lastName) {
+		waitForElement(driver, 3, FIRST_NAME_FIELD);
 		FIRST_NAME_FIELD.sendKeys(firstName);
 		LAST_NAME_FIELD.sendKeys(lastName);
 	}
@@ -49,10 +54,20 @@ public class AddCustomerPage extends BasePage{
 	
 	public void address(String line1, String line2) {
 		ADDRESS1_FIELD.sendKeys(line1);
-		ADDRESS1_FIELD.sendKeys(line2);
+		ADDRESS2_FIELD.sendKeys(line2);
+	}
+	
+	public void selectCountry(String country) {
+		COUNTRY_DROP_DOWN.click();
+		waitForElement(driver, 3, COUNTRY_FIELD);
+		COUNTRY_FIELD.sendKeys(country);
+		
+		Actions act = new Actions(driver);
+		act.sendKeys(Keys.ENTER).build().perform();
 	}
 	
 	public void submit() {
+		waitForElement(driver, 3, SUBMIT_BUTTON);
 		SUBMIT_BUTTON.click();
 	}
 	

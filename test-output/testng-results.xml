@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-20T17:22:28 EDT" name="Default suite" finished-at="2021-04-20T17:22:50 EDT" duration-ms="22130">
+  <suite started-at="2021-04-21T17:29:39 EDT" name="Default suite" finished-at="2021-04-21T17:29:51 EDT" duration-ms="11796">
     <groups>
     </groups>
-    <test started-at="2021-04-20T17:22:28 EDT" name="Default test" finished-at="2021-04-20T17:22:50 EDT" duration-ms="22130">
+    <test started-at="2021-04-21T17:29:39 EDT" name="Default test" finished-at="2021-04-21T17:29:51 EDT" duration-ms="11796">
       <class name="test.AddCustomerTest">
-        <test-method signature="validateAddingCustomer()[pri:0, instance:test.AddCustomerTest@47a5b70d]" started-at="2021-04-20T17:22:28 EDT" name="validateAddingCustomer" finished-at="2021-04-20T17:22:50 EDT" duration-ms="22095" status="PASS">
+        <test-method signature="validateAddingCustomer()[pri:0, instance:test.AddCustomerTest@5286c33a]" started-at="2021-04-21T17:29:39 EDT" name="validateAddingCustomer" finished-at="2021-04-21T17:29:51 EDT" duration-ms="11765" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateAddingCustomer -->
